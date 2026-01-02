@@ -1,0 +1,27 @@
+<template>
+
+    <lightning-card title="Speakers">
+
+        <!-- When speakers exist -->
+        <template if:true={speakers}>
+            <lightning-datatable
+                key-field="Id"
+                data={speakers}
+                columns={columns}
+                hide-checkbox-column
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+
+        <!-- When no speakers found -->
+        <template if:false={speakers}>
+            <div class="slds-p-around_medium">
+                <p class="slds-text-color_weak">
+                    No speakers found. Please search using the filters above.
+                </p>
+            </div>
+        </template>
+
+    </lightning-card>
+
+</template>

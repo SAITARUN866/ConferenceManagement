@@ -1,0 +1,52 @@
+/* Card container styling */
+lightning-card {
+    --slds-c-card-color-background: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Card title */
+.slds-card__header-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1b3a57;
+}
+
+/* Datatable wrapper spacing */
+lightning-datatable {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table header styling */
+.slds-table thead th {
+    background-color: #eef2f7;
+    color: #3e3e3c;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+/* Table row hover effect */
+.slds-table tbody tr:hover {
+    background-color: #f1f8ff;
+    cursor: pointer;
+}
+
+/* Row action button (View / Book) */
+.slds-table tbody tr lightning-button-icon {
+    --slds-c-icon-color-foreground-default: #0176d3;
+}
+
+/* Empty state styling */
+.slds-text-color_weak {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem;
+    color: #706e6b;
+}
+
+/* Smooth transition */
+.slds-table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}

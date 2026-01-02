@@ -1,0 +1,59 @@
+<template>
+
+    <!-- When no speaker is selected -->
+    <template if:false={speakerId}>
+        <lightning-card title="Book Session">
+            <div class="slds-p-around_medium">
+                <p class="slds-text-color_weak">
+                    Select a speaker from the left panel to view details and book a session.
+                </p>
+            </div>
+        </lightning-card>
+    </template>
+
+    <!-- When speaker is selected -->
+    <template if:true={speakerId}>
+        <lightning-card title="Speaker Details & Availability">
+
+            <div class="slds-p-around_medium">
+
+                <!-- Speaker Info -->
+                <p><strong>Speaker Speciality:</strong> {speakerSpeciality}</p>
+                <p class="slds-m-bottom_medium"><strong>Bio:</strong> {speakerBio}</p>
+
+                <!-- Date Selection -->
+                <lightning-input
+                    type="date"
+                    label="Select Session Date"
+                    min={minDate}
+                    onchange={handleDate}>
+                </lightning-input>
+
+                <!-- Availability Message -->
+                <template if:true={availabilityChecked}>
+                    <template if:true={available}>
+                        <p class="slds-text-color_success slds-m-top_small">
+                            Speaker is available on this date.
+                        </p>
+                    </template>
+                    <template if:false={available}>
+                        <p class="slds-text-color_error slds-m-top_small">
+                            Slot is already booked. Try another date.
+                        </p>
+                    </template>
+                </template>
+
+                <!-- Create Assignment Button -->
+                <div class="slds-m-top_medium">
+                    <lightning-button
+                        label="Create Assignment"
+                        variant="brand"
+                        onclick={createAssignment}
+                        disabled={disableCreate}>
+                    </lightning-button>
+                </div>
+
+            </div>
+        </lightning-card>
+    </template>
+

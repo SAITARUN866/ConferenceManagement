@@ -1,0 +1,18 @@
+/* Available date selected */
+.date-available input {
+    --slds-c-input-color-border: #2e844a;
+    --slds-c-input-shadow: 0 0 0 1px #2e844a;
+    background-color: #e6f4ea;
+}
+
+/* Booked date selected */
+.date-booked input {
+    --slds-c-input-color-border: #ba0517;
+    --slds-c-input-shadow: 0 0 0 1px #ba0517;
+    background-color: #fdecea;
+}
+
+/* Smooth UI transition */
+input {
+    transition: all 0.25s ease-in-out;
+}
